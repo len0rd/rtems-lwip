@@ -103,7 +103,7 @@ eth_lwip_init(uint8_t *mac_addr)
 #endif
 
   netif_tmp = netif_add(netif, &ip_addr, &net_mask, &gw_addr,
-                        NULL, ETH_LWIP_INIT_NETIF_FNC, tcpip_input);
+                        NULL, tms570_eth_init_netif, tcpip_input);
 
   if (netif_tmp == NULL)
     return NETIF_ADD_ERR;

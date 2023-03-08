@@ -31,6 +31,12 @@
 *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *
 */
+#ifndef __TI_DRV_EMAC_H__
+#define __TI_DRV_EMAC_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /*****************************************************************************/
 #include <stdint.h>
@@ -470,3 +476,9 @@ EMACInit(volatile tms570_emacc_t *emacCtrlBase, volatile tms570_emacm_t *emacBas
 
   emacBase->RXBUFFEROFFSET = 0;
 }
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __TI_DRV_EMAC_H__ */

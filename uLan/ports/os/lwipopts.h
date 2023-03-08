@@ -170,12 +170,12 @@
 **                          Memory Options
 *****************************************************************************/
 #define MEM_ALIGNMENT                   4
-#define MEM_SIZE                        (1024 * 1024) /* 4K */
+#define MEM_SIZE                        (30 * 1024)
 
-#define MEMP_NUM_PBUF                   96
-#define MEMP_NUM_TCP_PCB                32
-#define MEMP_NUM_TCP_SEG                32
-#define PBUF_POOL_SIZE                  512
+#define MEMP_NUM_PBUF                   48
+#define MEMP_NUM_TCP_PCB                16
+#define MEMP_NUM_TCP_SEG                16
+#define PBUF_POOL_SIZE                  96
 #define MEMP_MEM_MALLOC                 1
 #define MEMP_MEM_INIT                   1
 #define MEMP_OVERFLOW_CHECK             0
@@ -221,7 +221,7 @@
 **                           PBUF  Options
 *****************************************************************************/
 #define PBUF_LINK_HLEN                  14
-#define PBUF_POOL_BUFSIZE               1520         /* + size of struct pbuf
+#define PBUF_POOL_BUFSIZE               256         /* + size of struct pbuf
                                                         shall be cache line
                                                         aligned be enabled */
 #define ETH_PAD_SIZE                    0
