@@ -38,6 +38,9 @@
 #include <stdbool.h>
 #include "lwip/netif.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
  * While scanning phy addresses no alive phy was found.
@@ -92,9 +95,8 @@ void eth_lwip_set_hwaddr(struct netif *netif, uint8_t *mac_addr);
 void eth_lwip_get_hwaddr_str(struct netif *netif, uint8_t *macStr);
 struct netif *eth_lwip_get_netif(uint32_t instance_number);
 
-
-
-
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __ETH_LWIP_H */

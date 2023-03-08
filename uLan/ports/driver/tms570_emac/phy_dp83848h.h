@@ -34,6 +34,7 @@
 
 #ifndef __DRV_PHY_H
 #define __DRV_PHY_H
+#include "bsp/tms570.h"
 
 #ifdef __cplusplus
 extern "C" {

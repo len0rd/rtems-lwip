@@ -39,7 +39,7 @@
 #include "netif/etharp.h" /* includes - lwip/ip.h, lwip/netif.h, lwip/ip_addr.h, lwip/pbuf.h */
 #include "eth_lwip_default.h"
 #include "eth_lwip.h"
-#include "beaglebone.h"
+#include "tms570_netif.h"
 #include <stdio.h>
 
 /* The lwIP network interface structure for the Ethernet EMAC. */
@@ -103,7 +103,7 @@ eth_lwip_init(uint8_t *mac_addr)
 #endif
 
   netif_tmp = netif_add(netif, &ip_addr, &net_mask, &gw_addr,
-                        NULL, ETH_LWIP_INIT_NETIF_FNC, tcpip_input);
+                        NULL, tms570_eth_init_netif, tcpip_input);
 
   if (netif_tmp == NULL)
     return NETIF_ADD_ERR;

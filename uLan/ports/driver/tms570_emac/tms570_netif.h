@@ -34,6 +34,12 @@
 #ifndef __TMS570_NETIF_H
 #define __TMS570_NETIF_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "lwip/err.h"
+
 //#define TMS570_NETIF_DEBUG 1
 
 #ifdef TMS570_NETIF_DEBUG
@@ -56,5 +62,9 @@ void tms570_eth_debug_show_tx(struct tms570_netif_state *nf_state);
 void tms570_eth_debug_print_HDP(struct tms570_netif_state *nf_state);
 void tms570_eth_debug_print_info(struct netif *netif);
 #endif /* TMS570_NETIF_DEBUG */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __TMS570_NETIF_H */

@@ -125,11 +125,12 @@ sys_arch_unprotect(sys_prot_t pval)
   rtems_interrupt_enable(pval);
 }
 
+#else
+// used by tms570 driver
 static inline void
 sys_arch_data_sync_barier(void){
   _ARM_Data_synchronization_barrier();
 }
-#else
 sys_prot_t sys_arch_protect();
 
 void sys_arch_unprotect(sys_prot_t pval);
