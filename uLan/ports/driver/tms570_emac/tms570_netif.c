@@ -330,7 +330,8 @@ tms570_eth_init_find_PHY(struct tms570_netif_state *nf_state)
 static void
 tms570_eth_init_set_pinmux(void)
 {
-#if defined(__rtems__)
+// NOTE: pins currently get set up at the rtems-BSP start hook level
+#if 0 
   TMS570_IOMM.KICK_REG0 = 0x83E70B13U;
   TMS570_IOMM.KICK_REG1 = 0x95A4F1E0U;
 

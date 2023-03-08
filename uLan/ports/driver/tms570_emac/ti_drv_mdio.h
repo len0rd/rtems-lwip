@@ -157,7 +157,9 @@ MDIOInit(volatile tms570_mdio_t *baseAddr, uint32_t mdioInputFreq,
 {
   baseAddr->CONTROL = TMS570_MDIO_CONTROL_HIGHEST_USER_CHANNEL(1) |
                       TMS570_MDIO_CONTROL_ENABLE |
-                      TMS570_MDIO_CONTROL_CLKDIV(0x60);
+                      // MDIO clock should be divided down to 1Mhz for "typical operation". but can be up to 2.5Mhz (TRM s32.2.8.1.1)
+                      // MDIO_CLK = VLCK3 / (CLKDIV+1)
+                      TMS570_MDIO_CONTROL_CLKDIV((50-1));
 }
 
 #ifdef __cplusplus
